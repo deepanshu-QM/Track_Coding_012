@@ -1,17 +1,33 @@
-
-//Simple Todo app mongoDb Schema 
+//Register Schema 
 
 const mongoose = require('mongoose')
-mongoose.connect("Your URL of mongoDB")
 
-const todoSchema = mongoose.Schema({
-    title:String,
-    description:String,
-    completed :Boolean
+mongoose.connect('URL')
+
+const RegisterSchema = mongoose.Schema({
+    userName : {
+        type : String,
+        unique: true,
+        required:true
+    },
+    email : {
+        type:String,
+        unique:true,
+        requied:true
+    },
+    password : {
+        type:String,
+        required:true
+    },
+    date : {
+        type:String,
+        default:Date.now
+    },
+    timestamps : true,
 })
 
-const todo = mongoose.model("todos", todoSchema)
+const Registers = mongoose.Model("RegisterCollection", RegisterSchema)
 
 module.exports = {
-    todo : todo
+    Registers
 }
