@@ -1,44 +1,26 @@
 
-//Write a function createHelloWorld.It should Return a new Function that always Return "Hello World "
 
-function createHelloWorld(){
-    return function fn(...args){
-        return "Hello World";
+
+/* Given an integer n, return a counter function. This counter function initially returns n and then returns 1 more than the previous value every subsequent time it is called (n, n + 1, n + 2, etc).  */
+var createCounter = function(n) {
+    var count = 0;
+    return function counter() {
+        return n + count++;
     }
+    return counter;
 };
-
-console.log(createHelloWorld()());
-
-
-
-
-//Rest Argument
-
-function fn(...args){
-    const sum = args[0] + args[1] + args[2] + args[3] + args[4];
-    return sum;
-}
-console.log(fn(2,3,4,5,9));
+const counter = createCounter(10);
+console.log(counter(), counter(), counter())
 
 
 
-function fun(){
-    function fv(a,b){
-        const sum = a + b;
-        return sum;
-    }
-    return fv;
-}
 
-const fv = fun();
-console.log(fv(23,45))
-
-
-var createHelloWorld = function(){
-    return function f(...args){
-        return "Hello World"
-    }
+ var createCounterZ = function(n){
+    countz = 0;
+    return function counters(){
+        return n + countz++;
+    };
+    return counters;
  };
-
- const f = createHelloWorld();
- console.log(f({},null, 42))
+ const counters = createCounterZ(-2);
+ console.log(counters(), counters(), counters());
