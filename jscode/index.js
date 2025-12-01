@@ -1,49 +1,94 @@
 
-/* Write a function expect that helps developers test their code. It should take in any value val and return an object with the following two functions.
+// Node Structure
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
 
-toBe(val) accepts another value and returns true if the two values === each other. If they are not equal, it should throw an error "Not Equal".
-notToBe(val) accepts another value and returns true if the two values !== each other. If they are equal, it should throw an error "Equal".   */
+// Linked List Class
+class LinkedList {
+    constructor() {
+        this.head = null;
+    }
 
+    // Insert at the end
+    insert(value) {
+        let newNode = new Node(value);
 
-var expect = function(val){
-    const object = {
-        toBe: function(anotherVal){
-            if(val === anotherVal) return true;
-            else throw new Error("Not Equal")
-        },
-        notToBe: function(anotherVal){
-            if(val !== anotherVal) return true;
-            else throw new Error("Equal")
+        if (!this.head) {
+            this.head = newNode;
+            return;
         }
-    };
-    return object;
-};
-expect(5).toBe(5);
 
-/**
- * expect(5).toBe(5); // true
- * expect(5).notToBe(5); // throws "Equal"
- */
+        let temp = this.head;
+        while (temp.next !== null) {
+            temp = temp.next;
+        }
 
-*/
+        temp.next = newNode;
+    }
 
- let fs = require('fs');
+    // Delete a value
+    delete(value) {
+        if (!this.head) return;
 
+        // If the node to delete is the head
+        if (this.head.value === value) {
+            this.head = this.head.next;
+            return;
+        }
 
-var expect = function (val) {
-    return obj={
-        toBe(val1){
-            if (val === val1) return true;
-            else throw new Error("Not Equal")
-        },
+        let temp = this.head;
+        while (temp.next !== null && temp.next.value !== value) {
+            temp = temp.next;
+        }
 
-        notToBe(val1) {
-            if (val !== val1) return true;
-            else throw new Error("Equal")
+        if (temp.next) {
+            temp.next = temp.next.next;
         }
     }
-};
 
+    // Search a value
+    search(value) {
+        let temp = this.head;
 
-process.on("exit",()=>{
-    fs.writeFileSync("display_runtime.txt","0");
+        while (temp !== null) {
+            if (temp.value === value) return true;
+            temp = temp.next;
+        }
+        return false;
+    }
+
+    // Print Linked List
+    print() {
+        let temp = this.head;
+        let result = "";
+
+        while (temp !== null) {
+            result += temp.value + " -> ";
+            temp = temp.next;
+        }
+
+        console.log(result + "null");
+    }
+}
+
+// ------------------
+// Usage
+// ------------------
+
+let list = new LinkedList();
+
+list.insert(10);
+list.insert(20);
+list.insert(30);
+
+list.print();  // 10 -> 20 -> 30 -> null
+
+console.log(list.search(20)); // true
+console.log(list.search(50)); // false
+
+list.delete(20);
+list.print();  // 10 -> 30 -> null
