@@ -84,6 +84,9 @@ let list = new LinkedList();
 list.insert(10);
 list.insert(20);
 list.insert(30);
+list.insert(90);
+list.insert(100);
+list.insert(89);
 
 list.print();  // 10 -> 20 -> 30 -> null
 
