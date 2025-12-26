@@ -3,7 +3,7 @@
 This repository tracks my daily coding journey and progress.
 
 ### 📌 Languages I am practicing
-- C++
+- C++ for DSA
 - JavaScript
 - Python
 
