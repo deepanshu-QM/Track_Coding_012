@@ -1,25 +1,32 @@
 
+//Clean Code : Building Mini Banking  Transaction System (Function)
 
-//Clean Code : UserLoginValidator 
-function userLoginValidator(username,password){
+
+
+let TotalAmount = 978567
+
+function BankingTransaction(TotalAmount,Deposite,withDrawal){
     try{
-        if(!username || typeof username !== "string"){
-            throw new Error("Your username is Wrong : use string Type ")
+        if(typeof TotalAmount !== 'number' || typeof Deposite !== 'number' || typeof withDrawal !== 'number'){
+            throw Error("Invalid Typed : Use Number ")
         }
-        if(typeof password !== "string"){
-            throw new Error("Your password is Wrong : use string Type")
+        if(Deposite < 0 || withDrawal <0){
+            throw Error("Invalid Typed : Amount Should be valid ")
         }
-        if(password.length <= 6){
-            throw new Error("Your password must be more than 6 character ")
+        if(withDrawal >= TotalAmount){
+            throw Error("Invalid Typed : withDrawal amount Exceeds")
         }
-        if(username.toLowerCase() !== "john snow"){
-            throw new Error("Invalid username")
-        }
+        TotalAmount += Deposite;
+        TotalAmount -= withDrawal;
+        console.log(`Total Amount : ${TotalAmount} \n Deposite Amount : ${Deposite} \n WithDrawal Amount : ${withDrawal}`)
+    }
+    catch(error){
+        console.error(error.message)
+    }
 
-        console.log("Login sucessfully")
-    }catch(error){
-        console.log("Error : ", error.message)
+    finally {
+        console.log("Transaction Complete ")
     }
 }
 
-userLoginValidator("Gabriell Daisey", "uytgvjgvbbmhg")
+BankingTransaction(TotalAmount,0,2399999)
