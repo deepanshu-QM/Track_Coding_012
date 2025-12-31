@@ -26,4 +26,4 @@ function paymentProcess(cartTotal, paymentMethod) {
         console.log("Process Completed");
     }
 }
-paymentProcess(9000, "upi")
+paymentProcess(90000, "card")
