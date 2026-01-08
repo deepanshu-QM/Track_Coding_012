@@ -41,5 +41,18 @@ setInterval(() => {
     }
 },60*1000)
 
+export function log(message){
+    if(!canWrite) return
+    const format = `[${new Date().toISOString()}] ${message} \n`;
+    canWrite = LogsStream.write(format)
+    if(!canWrite) console.log(`Buffer is Full`)     
+}
+
+export function shutdownlogger(){
+    LogsStream.end(() => {
+        console.log(`Logs Complete`)
+    })
+}
+
 /* Flow Of the Program  
 app send message ----> logger -----> logger format it(add Time stamps , format message) ---->  logger Give to stream(It act Like pipline b\w app and disk , queue) ----->Stream put it into buffer(temporary memory where logs are stored)  -----> Disk write from buffer slowly*/
