@@ -6,12 +6,15 @@ const app = express();
 function authMiddleware(req, res, next){
     const username = req.headers.username;
     const password = req.headers.password;
-
-    if(username != "prettier@34kl" || password != "pass@6780hh"){
+    try{
+         if(username != "prettier@34kl" || password != "pass@6780hh"){
         res.status(400).json({  msg : "Incorrect Input"})
-    }else {
+     }else {
         next();
     }
+}catch(error){
+    console.log(`Message : ${error.message}`)
+}
 }
 
 function kidneyMiddleware(req, res, next){
