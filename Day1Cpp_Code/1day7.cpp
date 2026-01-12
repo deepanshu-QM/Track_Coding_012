@@ -1,5 +1,5 @@
 
-/* Question 1 : Square Pattern Printing :  Alphabets
+/* Question 1 : Square Pattern Printing :  
 123
 456
 789
@@ -14,6 +14,7 @@ int PatterPrint(int n, int num){
             cout<<num;
             num++;
         }
+        cout<<endl;
     }
 }
 int main(){
