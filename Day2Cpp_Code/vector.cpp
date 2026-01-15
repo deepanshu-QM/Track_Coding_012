@@ -34,4 +34,6 @@ int main(){
 
     cout<<vec.at(2)<<endl; //Excessing value at index 2
 
+    vec.push_back(90);
+    cout<<"Capicity : "<<vec.capacity()<<endl;
 }
