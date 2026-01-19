@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        background-color: black;
+    }
+    .container div{
+        background-color: cadetblue;
+        width: 100px;
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+        font-size: 30px;
+    }
+</style>
+<body>
+    <h1>Order Of the Box </h1>
+    <div class="container">
+        <div style="order: 3;">1</div>
+        <div style="order: 2;">2</div>
+        <div style="order: 4;">3</div>
+        <div style="order: 1;">4</div>
+        <div style="order: 5;">5</div>
+    </div>
+</body>
+</html>
