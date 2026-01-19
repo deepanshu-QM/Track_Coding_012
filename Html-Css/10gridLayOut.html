@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Half Layout</title>
+
+    <style>
+        /* Parent container */
+        .main-container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Left & Right halves */
+        .left, .right {
+            flex: 1;
+            display: flex;
+            align-items: center;       /* vertical alignment */
+            background-color: blue;
+            padding: 10px;
+        }
+
+        /* Left side */
+        .left {
+            justify-content: flex-start;
+        }
+
+        /* Right side */
+        .right {
+            justify-content: flex-end;
+        }
+
+        /* Boxes */
+        .box {
+            background-color: cadetblue;
+            width: 150px;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        /* Clean list */
+        .box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .box li {
+            margin: 8px 0;
+        }
+
+        .box a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Flexbox</h1>
+
+    <div class="main-container">
+
+        <!-- LEFT FLEXBOX -->
+        <div class="left">
+            <div class="box">
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Threads</a></li>
+                    <li><a href="#">Medium</a></li>
+                    <li><a href="#">TikTok</a></li>
+                </ul>
+            </div>
+
+            <div class="box">2</div>
+        </div>
+
+        <!-- RIGHT FLEXBOX -->
+        <div class="right">
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+
+    </div>
+</body>
+</html>
