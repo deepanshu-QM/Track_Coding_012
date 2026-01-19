@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Half Layout</title>
+
+    <style>
+        /* Parent container */
+        .main-container {
+            display: flex;
+            height: 100vh; /* full screen */
+        }
+
+        /* Left & Right halves */
+        .left, .right {
+            flex: 1; /* 50% each */
+            display: flex;
+            background-color: black;
+            padding: 10px;
+        }
+
+        /* Left side styling */
+        .left {
+            justify-content: flex-start;
+        }
+
+        /* Right side styling */
+        .right {
+            justify-content: flex-end;
+        }
+
+        /* Boxes */
+        .box {
+            background-color: cadetblue;
+            width: 100px;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Left & Right Flexbox</h1>
+
+    <div class="main-container">
+
+        <!-- LEFT FLEXBOX -->
+        <div class="left">
+            <div class="box">1</div>
+            <div class="box">2</div>
+        </div>
+
+        <!-- RIGHT FLEXBOX -->
+        <div class="right">
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+
+    </div>
+</body>
+</html>
