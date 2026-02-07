@@ -1,0 +1,11 @@
+
+--> Max size of the array inside main is 10^6;
+int main(){         
+    int N;
+    N  = 10^6;
+    int arr[N];
+}
+
+
+
+--> max size of the array globally is 10^7;
