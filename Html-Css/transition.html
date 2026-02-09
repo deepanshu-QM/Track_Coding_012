@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 300px;
+        height: 300px;
+        text-align: center;
+        font-size: 16px;
+        font-family: monospace;
+
+        background-color: #f38375;  
+        border: 2px solid;
+        margin:200px;
+        padding: 12px 20px;
+        transition-property: width;   /* Means what Should Change  or transform*/
+        transition-duration: 2s;
+        transition-timing-function: ease; /* Most Natural Transition i)speed up(slowlyii)accerlate iii)speed Reduce  */
+        transition-delay: 0s;
+        /* One Line transition property 
+        transition-property: transform 2s ease  0s ;*/
+    }
+    .container:hover{
+        width: 300px;  /* transform :rotate(135deg)  */
+    }
+</style>
+<body>
+    <div class="container">
+        This Shall to pass
+    </div>
+</body>
+</html>
+
+<!--
+Transition-timing-function : 
+1) ease
+2)ease-in  -> i)speed up slow ii) Speed Up in End (Great for mometum Effect)
+3)ease-in-out ->i)speed up ii) speed fast iii) speed slow
+4)ease-out  ->i)start fast ii) speed slow down end
+5)linear ->maintain constant speed
+6)steps ->step wise step Transition
+7)cubic-bezier ->can build custom path (x1,y1,x2,y2)
+
+-->
