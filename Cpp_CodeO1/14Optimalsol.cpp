@@ -1,5 +1,5 @@
 
-//Optimal Approch :
+//Optimal Approch :  (space complexity = o(1)) and Time compexity = o(N)
 
 #include<iostream>
 using namespace std;
